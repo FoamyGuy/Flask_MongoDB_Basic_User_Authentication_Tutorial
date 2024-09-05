@@ -3,6 +3,7 @@ import os
 from flask import Flask, request, send_from_directory, redirect
 from pymongo import MongoClient
 from flask_login import LoginManager, login_user, login_required, logout_user
+from werkzeug.security import generate_password_hash
 
 from models import User
 
@@ -47,6 +48,7 @@ def login():
                 return "Invalid Username or Password"
 
         except ValueError:
+            _ = generate_password_hash(incoming_password)
             return "Invalid Username or Password"
 
 @app.route("/logout")
