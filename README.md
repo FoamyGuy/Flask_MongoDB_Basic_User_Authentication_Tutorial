@@ -21,7 +21,8 @@ It will prompt for your password, type it and then press enter, it won't show th
 ### Going Further? 
 
 Here are some ideas for ways to enhance or expand upon the system. If you'd like to see videos
-covering any of these topics please leave a comment on YT video or create an issue on GitHub.
+covering any of these topics, or any other? please leave a comment on YT video or create 
+an issue on GitHub.
 
 - Frontend Registration Form and Flask Route Function
 - Logout Functionality

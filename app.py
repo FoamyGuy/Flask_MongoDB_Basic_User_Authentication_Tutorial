@@ -2,7 +2,7 @@ import os
 
 from flask import Flask, request, send_from_directory, redirect
 from pymongo import MongoClient
-from flask_login import LoginManager, login_user, login_required
+from flask_login import LoginManager, login_user, login_required, logout_user
 
 from models import User
 
@@ -49,6 +49,11 @@ def login():
         except ValueError:
             return "Invalid Username or Password"
 
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect("/login")
 
 @app.route('/')
 def index():  # put application's code here
